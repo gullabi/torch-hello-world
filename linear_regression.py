@@ -54,8 +54,8 @@ print(np.shape(X_train), np.shape(X_test), np.shape(y_train), np.shape(y_test))
 # instantate the model
 model = linearRegression(inputDim, outputDim)
 
-# For GPU
-if torch.cuda.is_available():
+# It should fail if there is no GPU
+try:
     model.cuda()
 
 # define MSE as the learning rule
