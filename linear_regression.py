@@ -57,6 +57,9 @@ model = linearRegression(inputDim, outputDim)
 # It should fail if there is no GPU
 try:
     model.cuda()
+except:
+    msg = "GPU not found."
+    raise RuntimeError(msg)
 
 # define MSE as the learning rule
 criterion = torch.nn.MSELoss()
